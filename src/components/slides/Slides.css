@@ -1,0 +1,49 @@
+.slides-viewport {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  background: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.slide-container {
+  display: flex;
+  align-items: center;
+  will-change: transform;
+  white-space: nowrap;
+}
+
+.slide-item {
+  flex: 0 0 13%; 
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-item img {
+  width: 100%;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain; /* Contain is better for logos than cover */
+  filter: grayscale(100%); /* Optional: classy logo look */
+  transition: filter 0.3s ease;
+}
+
+.slide-item img:hover {
+  filter: grayscale(0%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .slides-viewport {
+    height: 100px;
+    margin-top: 220px;
+  }
+  .slide-item {
+    flex: 0 0 15%;
+    padding: 0 30px;
+  }
+}
